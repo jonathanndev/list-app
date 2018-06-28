@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>simple list</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/simplelist.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-bar">
+            <ul>
+                <li class="nav-bar-item">
+                    <a href="/home/user/Documents/projects/list-app/mylists.html">
+                        come back
+                    </a>
+                </li>
+            </ul>
+            </nav>
+        </header>
+        <div id="alert-validation">
+        </div>
+        <div class="new-item-form">
+            <input type="text" class="input-item-quantity" id="input-item-quantity">
+            <input type="text" class="input-item-description" id="input-item-description">
+            <button type="button" id="button-add-item">+</button>
+        </div>
+        <div class="list">
+            <div id="list-title">
+                <span>title</span>
+                <button type="button" class="title-edit-button-display-none" id="title-edit-button"></button>
+            </div>
+            <table id="table">
+            </table>
+        </div>
+    </div>
+    <script src="js/simplelist.js"></script>
+</body>
+</html>

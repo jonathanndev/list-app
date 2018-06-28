@@ -1,0 +1,132 @@
+.nav-bar {
+    margin-top: 30px;
+    background-color: #80ffc0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+   
+.nav-bar li {
+    display: inline-block;
+}
+ 
+.nav-bar li a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-size: 40px;
+    background-image: url(../img/back.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    display: block;
+}
+ 
+.new-item-form input {
+    padding: 8px;
+    border: solid 2px;
+    border-color: rgba(139, 193, 163, 0.3);
+    background-color: rgb(247, 247, 247);
+    border-radius: 3px;
+}
+.new-item-form input:focus {
+    border-color: rgba(139, 193, 163, 0.7);
+}
+ 
+.new-item-form .input-item-description {
+    width: 67%;
+    margin-right: 2px;
+}
+ 
+.new-item-form .input-item-quantity {
+    width: 10%;
+    margin-right: 2px;
+}
+ 
+.new-item-form .input-item-unitary {
+    width: 11%;
+}
+ 
+.new-item-form button {
+    background-color: #80ffc0;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 2px;
+    cursor: pointer;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+}
+ 
+.list > div {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+ 
+.title-edit-button-hover {
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../img/edit2.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 17px;
+    cursor: pointer;
+}
+ 
+.title-edit-button-display-none {
+    display: none;
+}
+ 
+.list > button {
+    float: right;
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-size: 31px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+ 
+.list-item-description {
+    width: 100%;
+}
+ 
+.list-item-edit {
+    background-image: url(../img/edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+ 
+.list-item-remove {
+    background-image: url(../img/remove.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+ 
+.alert-validation {
+    color: red;
+    font-size: 15px;
+    background-color: rgba(239, 74, 74, 0.3);
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: solid 1px rgba(224, 53, 53, 0.2);
+}
+ 
+.alert-validation span ~ span {
+    float: right;
+    cursor: pointer;
+}
