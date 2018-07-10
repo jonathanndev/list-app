@@ -1,8 +1,8 @@
-var buttonAddItem = document.querySelector("#button-add-item");
-var inputItemQuantity = document.querySelector("#input-item-quantity");
-var inputItemDescription = document.querySelector("#input-item-description");
-var table = document.querySelector("#table");
-var listTitle = document.querySelector("#list-title");
+const buttonAddItem = document.querySelector("#button-add-item");
+const inputItemQuantity = document.querySelector("#input-item-quantity");
+const inputItemDescription = document.querySelector("#input-item-description");
+const table = document.querySelector("#table");
+const listTitle = document.querySelector("#list-title");
  
 buttonAddItem.addEventListener("click", function(event) {
     event.preventDefault();
@@ -14,13 +14,13 @@ buttonAddItem.addEventListener("click", function(event) {
 });
  
 function newItem(){
-    var itemQuantity = inputItemQuantity.value;
-    var itemDescription = inputItemDescription.value;
+    let itemQuantity = inputItemQuantity.value;
+    let itemDescription = inputItemDescription.value;
  
-    var trItem = document.createElement("tr");
+    let trItem = document.createElement("tr");
  
-    var tdItemQuantity = document.createElement("td");
-    var tdItemDescription = document.createElement("td");
+    let tdItemQuantity = document.createElement("td");
+    let tdItemDescription = document.createElement("td");
  
     tdItemQuantity.textContent = itemQuantity;
     tdItemDescription.textContent = itemDescription;
@@ -39,10 +39,10 @@ function cleanInput(){
 }
  
 table.addEventListener("mouseover", function(event){
-    var trItem = event.target.parentNode;
+    let trItem = event.target.parentNode;
  
-    var tdEdit = document.createElement("td");
-    var tdRemove = document.createElement("td");
+    let tdEdit = document.createElement("td");
+    let tdRemove = document.createElement("td");
  
     tdEdit.id = "list-item-edit";
     tdRemove.id = "list-item-remove";
@@ -66,10 +66,10 @@ table.addEventListener("mouseover", function(event){
 });
  
 table.addEventListener("mouseout", function(event){
-    var trItem = event.target.parentNode;
+    let trItem = event.target.parentNode;
  
-    var tdEdit = document.querySelector("#list-item-edit");
-    var tdRemove = document.querySelector("#list-item-remove");
+    let tdEdit = document.querySelector("#list-item-edit");
+    let tdRemove = document.querySelector("#list-item-remove");
  
     trItem.removeChild(tdEdit);
     trItem.removeChild(tdRemove);
@@ -78,13 +78,13 @@ table.addEventListener("mouseout", function(event){
 });
  
 listTitle.addEventListener("mouseover", function(){
-    var button = document.querySelector("#title-edit-button");
+    let button = document.querySelector("#title-edit-button");
     button.classList.remove("title-edit-button-display-none");
     button.classList.add("title-edit-button-hover");
 });
  
 listTitle.addEventListener("mouseout", function(){
-    var button = document.querySelector("#title-edit-button");
+    let button = document.querySelector("#title-edit-button");
     button.classList.remove("title-edit-button-hover");
     button.classList.add("title-edit-button-display-none");
 });
