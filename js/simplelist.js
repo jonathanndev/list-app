@@ -6,37 +6,12 @@ var listTitle = document.querySelector("#list-title");
  
 buttonAddItem.addEventListener("click", function(event) {
     event.preventDefault();
-    if(inputItemDescription.value == ""){
-        var divAlert = document.querySelector("#alert-validation");
-        if(!divAlert.classList.contains("alert-validation")){
-            alertValidation("Descricao obrigatoria!");
-        }
-    } else{
+    if(validation()){
         newItem();
         cleanInput();
         inputItemQuantity.focus();
     }
 });
- 
-function alertValidation(description){
-    var divAlert = document.querySelector("#alert-validation");
- 
-    var spanDescription = document.createElement("span");
-    var spanButtonClose = document.createElement("span");
- 
-    spanDescription.textContent = description;
-    spanButtonClose.textContent = "X";
- 
-    divAlert.classList.add("alert-validation");
-    divAlert.appendChild(spanDescription);
-    divAlert.appendChild(spanButtonClose);
- 
-    spanButtonClose.addEventListener("click", function(){
-        divAlert.classList.remove("alert-validation");
-        divAlert.removeChild(spanDescription);
-        divAlert.removeChild(spanButtonClose);
-    });
-}
  
 function newItem(){
     var itemQuantity = inputItemQuantity.value;
@@ -113,3 +88,20 @@ listTitle.addEventListener("mouseout", function(){
     button.classList.remove("title-edit-button-hover");
     button.classList.add("title-edit-button-display-none");
 });
+
+function validation(){
+    if(inputItemDescription.value == ''){
+        //check why it is not working
+        inputItemDescription.classList.add('validation-decoration');
+        inputItemDescription.placeholder = 'Description is required'
+        return false;
+    }else{
+        if(inputItemDescription.classList.contains('validation-decoration')){
+            inputItemDescription.classList.remove('validation-decoration');
+        }
+        if(inputItemDescription.hasAttribute('placeholder')){
+            inputItemDescription.removeAttribute('placeholder');
+        }
+        return true;
+    }
+}
