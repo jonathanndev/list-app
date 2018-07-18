@@ -112,21 +112,3 @@
     background-size: 25px;
 }
  
-.alert-validation {
-    color: red;
-    font-size: 15px;
-    background-color: rgba(239, 74, 74, 0.3);
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: solid 1px rgba(224, 53, 53, 0.2);
-}
- 
-.alert-validation span ~ span {
-    float: right;
-    cursor: pointer;
-}

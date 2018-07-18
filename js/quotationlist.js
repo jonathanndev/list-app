@@ -1,18 +1,13 @@
-const buttonAddItem = document.querySelector("#button-add-item");
-const inputItemQuantity = document.querySelector("#input-item-quantity");
-const inputItemDescription = document.querySelector("#input-item-description");
-const inputItemUnitary = document.querySelector("#input-item-unitary");
-const table = document.querySelector("#table");
-const listTitle = document.querySelector("#list-title");
+const buttonAddItem = document.querySelector('#button-add-item');
+const inputItemQuantity = document.querySelector('#input-item-quantity');
+const inputItemDescription = document.querySelector('#input-item-description');
+const inputItemUnitary = document.querySelector('#input-item-unitary');
+const table = document.querySelector('#table');
+const listTitle = document.querySelector('#list-title');
  
-buttonAddItem.addEventListener("click", function(event) {
+buttonAddItem.addEventListener('click', function(event) {
     event.preventDefault();
-    if(inputItemDescription.value == ""){
-        let divAlert = document.querySelector("#alert-validation");
-        if(!divAlert.classList.contains("alert-validation")){
-            alertValidation("Descricao obrigatoria!");
-        }
-    } else{
+    if(validation()){
         newItem();
         cleanInput();
         inputItemQuantity.focus();
@@ -20,62 +15,62 @@ buttonAddItem.addEventListener("click", function(event) {
 });
  
  
-table.addEventListener("mouseover", function(event){
+table.addEventListener('mouseover', function(event){
     let trItem = event.target.parentNode;
  
-    let tdEdit = document.createElement("td");
-    let tdRemove = document.createElement("td");
+    let tdEdit = document.createElement('td');
+    let tdRemove = document.createElement('td');
  
-    tdEdit.id = "list-item-edit";
-    tdRemove.id = "list-item-remove";
+    tdEdit.id = 'list-item-edit';
+    tdRemove.id = 'list-item-remove';
  
-    tdEdit.classList.add("list-item-edit");
-    tdRemove.classList.add("list-item-remove");
+    tdEdit.classList.add('list-item-edit');
+    tdRemove.classList.add('list-item-remove');
  
-    trItem.classList.add("table-hover");
+    trItem.classList.add('table-hover');
  
     trItem.appendChild(tdEdit);
     trItem.appendChild(tdRemove);
  
-    tdRemove.addEventListener("click", function(){
+    tdRemove.addEventListener('click', function(){
         this.parentNode.remove();
     });
  
-    tdEdit.addEventListener("click", function(event){
+    tdEdit.addEventListener('click', function(event){
         let tr = event.target.addEventListener.parentNode;
         console.log(tr);
     });
 });
  
  
-table.addEventListener("mouseout", function(event){
+table.addEventListener('mouseout', function(event){
     let trItem = event.target.parentNode;
  
-    let tdEdit = document.querySelector("#list-item-edit");
-    let tdRemove = document.querySelector("#list-item-remove");
+    let tdEdit = document.querySelector('#list-item-edit');
+    let tdRemove = document.querySelector('#list-item-remove');
  
     trItem.removeChild(tdEdit);
     trItem.removeChild(tdRemove);
  
-    trItem.classList.remove("table-hover");
+    trItem.classList.remove('table-hover');
 });
  
  
 function alertValidation(description){
-    let divAlert = document.querySelector("#alert-validation");
+    let divAlert = document.querySelector('#alert-validation');
  
-    let spanDescription = document.createElement("span");
-    let spanButtonClose = document.createElement("span");
+    let spanDescription = document.createElement('span');
+    let spanButtonClose = document.createElement('span');
  
     spanDescription.textContent = description;
-    spanButtonClose.textContent = "X";
+    spanButtonClose.textContent = 'X';
  
-    divAlert.classList.add("alert-validation");
+    divAlert.classList.add('alert-validation');
     divAlert.appendChild(spanDescription);
     divAlert.appendChild(spanButtonClose);
  
-    spanButtonClose.addEventListener("click", function(){
-        divAlert.classList.remove("alert-validation");
+    spanButtonClose.addEventListener('click', function(){
+        divAlert.classList.remove('alert-validation');
         divAlert.removeChild(spanDescription);
         divAlert.removeChild(spanButtonClose);
     });
@@ -83,9 +78,9 @@ function alertValidation(description){
  
  
 function cleanInput(){
-    inputItemQuantity.value = "";
-    inputItemDescription.value = "";
-    inputItemUnitary.value = "";
+    inputItemQuantity.value = '';
+    inputItemDescription.value = '';
+    inputItemUnitary.value = '';
 }
  
 function newItem(){
@@ -93,12 +88,12 @@ function newItem(){
     let itemDescription = inputItemDescription.value;
     let itemUnitary = inputItemUnitary.value;
  
-    let trItem = document.createElement("tr");
+    let trItem = document.createElement('tr');
  
-    let tdItemQuantity = document.createElement("td");
-    let tdItemDescription = document.createElement("td");
-    let tdItemUnitary = document.createElement("td");
-    let tdItemTotal = document.createElement("td");
+    let tdItemQuantity = document.createElement('td');
+    let tdItemDescription = document.createElement('td');
+    let tdItemUnitary = document.createElement('td');
+    let tdItemTotal = document.createElement('td');
  
     tdItemQuantity.textContent = itemQuantity;
     tdItemDescription.textContent = itemDescription;
@@ -106,8 +101,8 @@ function newItem(){
     total = itemQuantity * itemUnitary;
     tdItemTotal.textContent = numberToReal(total);
      
-    tdItemDescription.classList.add("list-item-description");
-    tdItemUnitary.classList.add("list-item-Unitary");
+    tdItemDescription.classList.add('list-item-description');
+    tdItemUnitary.classList.add('list-item-Unitary');
      
     trItem.appendChild(tdItemQuantity);
     trItem.appendChild(tdItemDescription);
@@ -125,17 +120,35 @@ function numberToReal(numero) {
     return numero.join(',');
 }
  
-listTitle.addEventListener("mouseover", function(){
-    let button = document.querySelector("#title-edit-button");
-    let spanTitle = document.querySelector("#list-title");
+listTitle.addEventListener('mouseover', function(){
+    let button = document.querySelector('#title-edit-button');
+    let spanTitle = document.querySelector('#list-title');
     spanTitle = spanTitle.children[0];
  
-    button.classList.remove("title-edit-button-display-none");
-    button.classList.add("title-edit-button-hover");
+    button.classList.remove('title-edit-button-display-none');
+    button.classList.add('title-edit-button-hover');
 });
  
-listTitle.addEventListener("mouseout", function(){
-    let button = document.querySelector("#title-edit-button");
-    button.classList.remove("title-edit-button-hover");
-    button.classList.add("title-edit-button-display-none");
+listTitle.addEventListener('mouseout', function(){
+    let button = document.querySelector('#title-edit-button');
+    button.classList.remove('title-edit-button-hover');
+    button.classList.add('title-edit-button-display-none');
 });
+
+
+function validation(){
+    if(inputItemDescription.value == ''){
+        //check why it is not working
+        inputItemDescription.classList.add('validation-decoration');
+        inputItemDescription.placeholder = 'Description is required'
+        return false;
+    }else{
+        if(inputItemDescription.classList.contains('validation-decoration')){
+            inputItemDescription.classList.remove('validation-decoration');
+        }
+        if(inputItemDescription.hasAttribute('placeholder')){
+            inputItemDescription.removeAttribute('placeholder');
+        }
+        return true;
+    }
+}

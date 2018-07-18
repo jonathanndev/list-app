@@ -25,3 +25,8 @@ html {
 .table-hover {
     background-color: rgb(208, 242, 224);
 }
+
+.validation-decoration {
+    border: solid 2px;
+    border-color: rgba(255, 0, 0, 0.3);
+}
