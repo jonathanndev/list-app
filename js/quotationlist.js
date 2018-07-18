@@ -55,28 +55,6 @@ table.addEventListener('mouseout', function(event){
     trItem.classList.remove('table-hover');
 });
  
- 
-function alertValidation(description){
-    let divAlert = document.querySelector('#alert-validation');
- 
-    let spanDescription = document.createElement('span');
-    let spanButtonClose = document.createElement('span');
- 
-    spanDescription.textContent = description;
-    spanButtonClose.textContent = 'X';
- 
-    divAlert.classList.add('alert-validation');
-    divAlert.appendChild(spanDescription);
-    divAlert.appendChild(spanButtonClose);
- 
-    spanButtonClose.addEventListener('click', function(){
-        divAlert.classList.remove('alert-validation');
-        divAlert.removeChild(spanDescription);
-        divAlert.removeChild(spanButtonClose);
-    });
-}
- 
- 
 function cleanInput(){
     inputItemQuantity.value = '';
     inputItemDescription.value = '';
